@@ -1,12 +1,10 @@
-## 0.0.2 - 2019-06-19
-### Added
+### [1.0.0] - 2019-06-19
 
-- In Document Demo Gif added on readme file
-- In Selection Demo Gif added on readme file
+Initial Release
 
-## [0.0.1] - 2019-06-19
-### Added
 - Remove empty/blank lines on selected texts
 - Remove empty/blank lines on opened document
 - Shortcuts added
 - Show deleted lines count on status bar
+- In Document Demo Gif added on readme file
+- In Selection Demo Gif added on readme file
