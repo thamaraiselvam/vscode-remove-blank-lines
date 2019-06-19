@@ -1,11 +1,12 @@
 {
 	"name": "remove-blank-lines",
-	"displayName": "remove-blank-lines",
-	"description": "this extension remove all blank lines in a file",
+	"displayName": "Remove Blank Lines",
+	"description": "Fastest way to remove all empty lines in a document",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.35.0"
 	},
+	"icon": "images/icon.png",
 	"categories": [
 		"Other"
 	],
