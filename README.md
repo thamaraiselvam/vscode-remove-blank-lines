@@ -25,10 +25,15 @@ Search `Remove Blank Lines` -> `In Document`
 VS Code - 1.35.0
 
 ## Release Notes
-### 1.0.0
 
-Initial release
+## 0.0.2 - 2019-06-19
+### Added
 
+- In Document Demo Gif added on readme file
+- In Selection Demo Gif added on readme file
+
+## [0.0.1] - 2019-06-19
+### Added
 - Remove empty/blank lines on selected texts
 - Remove empty/blank lines on opened document
 - Shortcuts added
