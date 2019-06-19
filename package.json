@@ -10,20 +10,31 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.removeOnSelectedLines",
+		"onCommand:extension.removeOnDocument"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.removeOnSelectedLines",
+				"title": "In Selection",
+				"category": "Remove Blank lines"
+			},
+			{
+				"command": "extension.removeOnDocument",
+				"title": "In Document",
+				"category": "Remove Blank lines"
 			}
 		],
 		"keybindings":[
 			{
-				"command": "extension.helloWorld",
+				"command": "extension.removeOnSelectedLines",
 				"key": "Ctrl+Shift+A"
+			},
+			{
+				"command": "extension.removeOnDocument",
+				"key": "Ctrl+Shift+Z"
 			}
 		]
 	},

@@ -1,48 +1,95 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+//It will be invoked on deactivation
 export function activate(context: vscode.ExtensionContext) {
 
-	function removeBlankLines(editor: vscode.TextEditor, edit: vscode.TextEditorEdit) {
+	function removeBlankLines(isSelected: Boolean, editor: vscode.TextEditor) {
 
-		const { document, selections } = editor;
+		let ranges: any = isSelected ? getSelectedRange(editor) : getDocumentRange(editor);
+
+		if (ranges === false) {
+			return; //if selection empty or empty document
+		}
+
+		parseEmptyLines(editor, ranges);
+	}
+
+
+	function getSelectedRange(editor: vscode.TextEditor) {
+
+		const { selections } = editor;
 
 		if (selections.length === 1 && selections[0].isEmpty) {
-			vscode.window.showInformationMessage('Select atleast one line');
-			return;
+			return false; //selected text empty
 		}
 
 		let ranges: any = [];
 
 		selections.forEach((selection) => {
-			ranges.push({ start: selection.start.line, end: selection.end.line });
+			ranges.push({ start: selection.start.line, end: selection.end.line }); //Get range for all selected portions
 		});
 
-		deleteEmptyLines(editor, document, ranges);
-
+		return ranges;
 	}
 
-	function deleteEmptyLines(editor: vscode.TextEditor, document: vscode.TextDocument, ranges: any) {
+	function getDocumentRange(editor: vscode.TextEditor) {
+		const { document } = editor;
+		return [{ start: 0, end: document.lineCount - 1 }];
+	}
+
+	function parseEmptyLines(editor: vscode.TextEditor, ranges: any) {
+
+		const { document } = editor;
+
+		let deletedLinesCounter = 0;
 		editor.edit((edit) => {
-			ranges.forEach((range: any) => {
-				for (let index = range.start; index < range.end; index++) {
-					let line = document.lineAt(index);
-					console.log(line.isEmptyOrWhitespace, index+ 1);
-					if (line.isEmptyOrWhitespace) {
-						edit.delete(line.rangeIncludingLineBreak);
-					}
-				}
+			ranges.forEach((range: any) => { //process every selected range
+				deletedLinesCounter += deleteEmptyLines(range, edit, document);
 			});
 		});
+
+		showStatusMsg(deletedLinesCounter);
 	}
 
-	let disposable = vscode.commands.registerTextEditorCommand('extension.helloWorld', removeBlankLines);
+	function deleteEmptyLines(range: any, edit: vscode.TextEditorEdit, document: vscode.TextDocument){
+		let deletedLinesCounter = 0;
+		for (let index = range.start; index < range.end; index++) {
 
-	context.subscriptions.push(disposable);
+			let line = document.lineAt(index);
+
+			if (!line.isEmptyOrWhitespace) {
+				continue;
+			}
+
+			deletedLinesCounter++;
+			edit.delete(line.rangeIncludingLineBreak);
+		}
+
+		return deletedLinesCounter;
+	}
+
+	function showStatusMsg(deletedLinesCounter: number) {
+		if (!deletedLinesCounter) {
+			return;
+		}
+
+		statusBar.text = `${deletedLinesCounter} blank line(s) removed`;
+		statusBar.show();
+
+		setTimeout(() => {
+			statusBar.hide();
+		}, 2000);
+	}
+
+	//Registering commands
+	let _removeOnSelectedLines = vscode.commands.registerTextEditorCommand('extension.removeOnSelectedLines', removeBlankLines.bind(null, true));
+	let _removeOnDocument = vscode.commands.registerTextEditorCommand('extension.removeOnDocument', removeBlankLines.bind(null, false));
+
+	//Registering Status bar
+	let statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+
+	context.subscriptions.push(_removeOnSelectedLines, _removeOnDocument, statusBar);
 }
 
-// this method is called when your extension is deactivated
+//It will be invoked on deactivation
 export function deactivate() { }
