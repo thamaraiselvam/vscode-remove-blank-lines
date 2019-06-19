@@ -11,6 +11,7 @@ The fastest way to remove empty lines from opened document.
 ### From All commands
 
 Search `Remove Blank Lines` -> `In Selection`
+
 Search `Remove Blank Lines` -> `In Document`
 
 \!\[Demo - In Selection\]\(images/demo-in-selection.gif\)
