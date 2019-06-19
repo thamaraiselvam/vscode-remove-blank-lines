@@ -14,8 +14,11 @@ Search `Remove Blank Lines` -> `In Selection`
 
 Search `Remove Blank Lines` -> `In Document`
 
-\!\[Demo - In Selection\]\(images/demo-in-selection.gif\)
-\!\[Demo - In Document\]\(images/demo-in-document.gif\)
+#### Remove blank lines in Selection
+![Demo - In Selection](images/demo-in-selection.gif)
+
+#### Remove blank lines in Document
+![Demo - In Document](images/demo-in-document.gif)
 
 ## Requirements
 
