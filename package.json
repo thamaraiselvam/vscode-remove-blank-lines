@@ -3,13 +3,31 @@
 	"displayName": "Remove Blank Lines",
 	"description": "Fastest way to remove all empty lines in a document",
 	"version": "0.0.1",
+	"publisher": "thamaraiselvam",
+	"license": "MIT",
 	"engines": {
 		"vscode": "^1.35.0"
 	},
-	"icon": "images/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/thamaraiselvam/vscode-remove-blank-lines"
+	},
+	"bugs": {
+		"url": "https://github.com/thamaraiselvam/vscode-remove-blank-lines/issues"
+	},
+	"keywords": [
+		"remove",
+		"delete",
+		"empty",
+		"blank",
+		"line",
+		"lines"
+	],
 	"categories": [
+		"Formatters",
 		"Other"
 	],
+	"icon": "images/icon.png",
 	"activationEvents": [
 		"onCommand:extension.removeOnSelectedLines",
 		"onCommand:extension.removeOnDocument"
