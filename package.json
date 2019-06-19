@@ -30,11 +30,11 @@
 		"keybindings":[
 			{
 				"command": "extension.removeOnSelectedLines",
-				"key": "Ctrl+Shift+A"
+				"key": "Ctrl+Shift+A+Z"
 			},
 			{
 				"command": "extension.removeOnDocument",
-				"key": "Ctrl+Shift+Z"
+				"key": "Ctrl+Shift+Z+A"
 			}
 		]
 	},

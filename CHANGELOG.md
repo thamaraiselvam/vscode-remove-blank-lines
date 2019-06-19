@@ -1,9 +1,6 @@
-# Change Log
-
-All notable changes to the "remove-blank-lines" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+## [1.0.0] - 2019-06-19
+### Added
+- Remove empty/blank lines on selected texts
+- Remove empty/blank lines on opened document
+- Shortcuts added
+- Show deleted lines count on status bar
