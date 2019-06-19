@@ -5,8 +5,8 @@ The fastest way to remove empty lines from opened document.
 ## Features
 
 ### Shortcuts
-- `Ctrl+Shift+A+Z` to remove on selected text portions
-- `Ctrl+Shift+Z+A` to remove on opened document
+- `Ctrl+Shift+A Ctrl+Shift+Z` to remove on selected text portions
+- `Ctrl+Shift+Z Ctrl+Shift+A` to remove on opened document
 
 ### From All commands
 
