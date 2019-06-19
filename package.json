@@ -2,7 +2,7 @@
 	"name": "remove-blank-lines",
 	"displayName": "Remove Blank Lines",
 	"description": "Fastest way to remove all empty lines in a document",
-	"version": "0.2.0",
+	"version": "0.0.2",
 	"publisher": "thamaraiselvam",
 	"license": "MIT",
 	"engines": {
