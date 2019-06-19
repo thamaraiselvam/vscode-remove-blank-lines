@@ -2,7 +2,7 @@
 	"name": "remove-blank-lines",
 	"displayName": "Remove Blank Lines",
 	"description": "Fastest way to remove all empty lines in a document",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"publisher": "thamaraiselvam",
 	"license": "MIT",
 	"engines": {
@@ -46,7 +46,7 @@
 				"category": "Remove Blank lines"
 			}
 		],
-		"keybindings":[
+		"keybindings": [
 			{
 				"command": "extension.removeOnSelectedLines",
 				"key": "Ctrl+Shift+A Ctrl+Shift+Z"
