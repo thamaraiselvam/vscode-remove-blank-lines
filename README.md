@@ -22,6 +22,10 @@ Search `Remove Blank Lines` -> `In Selection`
 
 Search `Remove Blank Lines` -> `In Document`
 
+### Manage Extension Settings
+
+File -> Preferences -> Settings -> Extension -> Number of allowed consecutive empty lines
+
 #### Remove blank lines in Selection
 ![Demo - In Selection](images/demo-in-selection.gif)
 
@@ -34,7 +38,11 @@ VS Code - 1.35.0
 
 ## Release Notes
 
-### [1.0.0] - 2019-06-19
+### v1.1.0 - 20-Jun-2019
+
+- Users can controll "Number of allowed consecutive empty lines" via extension settings.
+
+### v1.0.0 - 19-Jun-2019
 
 Initial Release
 

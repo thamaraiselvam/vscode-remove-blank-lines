@@ -1,4 +1,8 @@
-### [1.0.0] - 2019-06-19
+### v1.1.0 - 20-Jun-2019
+
+- Users can controll "Number of allowed consecutive empty lines" via extension settings.
+
+### v1.0.0 - 19-Jun-2019
 
 Initial Release
 

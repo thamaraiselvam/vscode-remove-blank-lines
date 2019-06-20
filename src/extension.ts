@@ -76,7 +76,6 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 
 			numberOfConsequtiveEmptyLines++;
-			console.log('numberOfConsequtiveEmptyLines', numberOfConsequtiveEmptyLines);
 			if (numberOfConsequtiveEmptyLines > config.allowedNumberOfEmptyLines) {
 				deletedLinesCounter++;
 				edit.delete(line.rangeIncludingLineBreak);
