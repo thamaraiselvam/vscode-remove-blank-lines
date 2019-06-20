@@ -55,7 +55,17 @@
 				"command": "extension.removeOnDocument",
 				"key": "Ctrl+Shift+Z Ctrl+Shift+A"
 			}
-		]
+		],
+		"configuration": {
+			"title": "Remove empty/blank lines configuration",
+			"properties": {
+				"remove-empty-lines.allowedNumberOfEmptyLines": {
+					"type": "number",
+					"default": 1,
+					"description": "Number of allowed consecutive empty lines."
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

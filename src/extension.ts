@@ -1,7 +1,10 @@
 import * as vscode from 'vscode';
+import { commands, StatusBarAlignment, window, workspace  } from 'vscode';
 
 //It will be invoked on deactivation
 export function activate(context: vscode.ExtensionContext) {
+
+	let config: any = {};
 
 	function removeBlankLines(isSelected: Boolean, editor: vscode.TextEditor) {
 
@@ -11,7 +14,16 @@ export function activate(context: vscode.ExtensionContext) {
 			return; //if selection empty or empty document
 		}
 
+		setConfig();
+
 		parseEmptyLines(editor, ranges);
+	}
+
+	function setConfig() {
+		config.allowedNumberOfEmptyLines = workspace.getConfiguration().get('remove-empty-lines.allowedNumberOfEmptyLines');
+		if (config.allowedNumberOfEmptyLines < 0 || config.allowedNumberOfEmptyLines > 500) {
+			config.allowedNumberOfEmptyLines = 1;
+		}
 	}
 
 
@@ -51,18 +63,24 @@ export function activate(context: vscode.ExtensionContext) {
 		showStatusMsg(deletedLinesCounter);
 	}
 
-	function deleteEmptyLines(range: any, edit: vscode.TextEditorEdit, document: vscode.TextDocument){
+	function deleteEmptyLines(range: any, edit: vscode.TextEditorEdit, document: vscode.TextDocument) {
 		let deletedLinesCounter = 0;
+		let numberOfConsequtiveEmptyLines = 0;
 		for (let index = range.start; index < range.end; index++) {
 
 			let line = document.lineAt(index);
 
 			if (!line.isEmptyOrWhitespace) {
+				numberOfConsequtiveEmptyLines = 0;
 				continue;
 			}
 
-			deletedLinesCounter++;
-			edit.delete(line.rangeIncludingLineBreak);
+			numberOfConsequtiveEmptyLines++;
+			console.log('numberOfConsequtiveEmptyLines', numberOfConsequtiveEmptyLines);
+			if (numberOfConsequtiveEmptyLines > config.allowedNumberOfEmptyLines) {
+				deletedLinesCounter++;
+				edit.delete(line.rangeIncludingLineBreak);
+			}
 		}
 
 		return deletedLinesCounter;
@@ -82,11 +100,11 @@ export function activate(context: vscode.ExtensionContext) {
 	}
 
 	//Registering commands
-	let _removeOnSelectedLines = vscode.commands.registerTextEditorCommand('extension.removeOnSelectedLines', removeBlankLines.bind(null, true));
-	let _removeOnDocument = vscode.commands.registerTextEditorCommand('extension.removeOnDocument', removeBlankLines.bind(null, false));
+	let _removeOnSelectedLines = commands.registerTextEditorCommand('extension.removeOnSelectedLines', removeBlankLines.bind(null, true));
+	let _removeOnDocument = commands.registerTextEditorCommand('extension.removeOnDocument', removeBlankLines.bind(null, false));
 
 	//Registering Status bar
-	let statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+	let statusBar = window.createStatusBarItem(StatusBarAlignment.Right, 100);
 
 	context.subscriptions.push(_removeOnSelectedLines, _removeOnDocument, statusBar);
 }
