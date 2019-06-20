@@ -24,7 +24,7 @@ Search `Remove Blank Lines` -> `In Document`
 
 ### Manage Extension Settings
 
-File -> Preferences -> Settings -> Extension -> Number of allowed consecutive empty lines
+File -> Preferences -> Settings -> Extension -> Remove Blank Lines -> Number of allowed consecutive empty lines
 
 #### Remove blank lines in Selection
 ![Demo - In Selection](images/demo-in-selection.gif)
