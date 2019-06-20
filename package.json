@@ -27,7 +27,7 @@
 		"Formatters",
 		"Other"
 	],
-	"icon": "images/icon.png",
+	"icon": "images/icon.gif",
 	"activationEvents": [
 		"onCommand:extension.removeOnSelectedLines",
 		"onCommand:extension.removeOnDocument"
