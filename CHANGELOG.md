@@ -1,3 +1,6 @@
+### v1.1.1 - 20-Jun-2019
+- New Logo updated
+
 ### v1.1.0 - 20-Jun-2019
 
 - Users can controll "Number of allowed consecutive empty lines" via extension settings.
