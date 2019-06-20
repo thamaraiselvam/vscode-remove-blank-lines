@@ -1,5 +1,13 @@
 # Remove Blank Lines
 
+
+<img alt="Visual Studio Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/Thamaraiselvam.remove-blank-lines.svg"> <img alt="Visual Studio Marketplace Downloads" src="https://img.shields.io/visual-studio-marketplace/d/Thamaraiselvam.remove-blank-lines.svg"> <img alt="Visual Studio Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/Thamaraiselvam.remove-blank-lines.svg"> <img alt="Visual Studio Marketplace Rating" src="https://img.shields.io/visual-studio-marketplace/r/Thamaraiselvam.remove-blank-lines.svg">
+
+
+
+<a href="https://www.buymeacoffee.com/R8Nc2vn" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee"></a>
+
+
 The fastest way to remove empty lines from opened document.
 
 ## Features
