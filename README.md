@@ -3,6 +3,8 @@
 
 <img alt="Visual Studio Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/Thamaraiselvam.remove-blank-lines.svg?style=for-the-badge"> <img alt="Visual Studio Marketplace Downloads" src="https://img.shields.io/visual-studio-marketplace/d/Thamaraiselvam.remove-blank-lines.svg?style=for-the-badge"> <img alt="Visual Studio Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/Thamaraiselvam.remove-blank-lines.svg?style=for-the-badge"> <img alt="Visual Studio Marketplace Rating" src="https://img.shields.io/visual-studio-marketplace/r/Thamaraiselvam.remove-blank-lines.svg?style=for-the-badge">
 
+<a href="https://www.producthunt.com/posts/vs-code-remove-blank-lines?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-vs-code-remove-blank-lines" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=161359&theme=dark" alt="VS Code Remove Blank Lines - The fastest way to remove empty lines from opened document. | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" /></a>
+
 
 
 <a href="https://www.buymeacoffee.com/R8Nc2vn" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee"></a>
