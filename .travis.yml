@@ -18,8 +18,12 @@ before_install:
 install: 
   - npm install
   - npm run vscode:prepublish
-
+  
 script:
+  - npm install codecov -g
   - npm test --silent
+  
+after_success:
+  - codecov
 
 cache: node_modules
