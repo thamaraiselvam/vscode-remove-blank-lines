@@ -20,7 +20,6 @@ install:
   - npm run vscode:prepublish
   
 script:
-  - npm test --silent
   - npm install codecov -g
   
 after_success:
